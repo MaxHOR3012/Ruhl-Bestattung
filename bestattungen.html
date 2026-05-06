@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bestattungsarten – Ruhl Bestattungen Lauterbach</title>
+  <meta name="description" content="Alle Bestattungsarten bei Ruhl Bestattungen: Erdbestattung, Feuerbestattung, Seebestattung, Friedwaldbestattung, Naturbestattung und mehr." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --c-dark:   #1a1a1a;
+      --c-mid:    #2e2e2e;
+      --c-stone:  #4a4a4a;
+      --c-warm:   #c8a96e;
+      --c-warm2:  #e2c98a;
+      --c-cream:  #faf8f4;
+      --c-white:  #ffffff;
+      --c-border: #e0d9ce;
+      --font-serif: 'Georgia', 'Times New Roman', serif;
+      --font-sans:  'Segoe UI', system-ui, -apple-system, sans-serif;
+      --r: 4px;
+      --transition: 0.3s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); color: var(--c-dark); background: var(--c-cream); line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--c-warm);
+      margin-bottom: 12px;
+    }
+    .divider { width: 56px; height: 2px; background: var(--c-warm); margin: 16px 0 32px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: var(--r);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition);
+    }
+    .btn--gold { background: var(--c-warm); color: var(--c-dark); border-color: var(--c-warm); }
+    .btn--gold:hover { background: var(--c-warm2); border-color: var(--c-warm2); }
+    .btn--outline-gold { background: transparent; color: var(--c-warm); border-color: var(--c-warm); }
+    .btn--outline-gold:hover { background: var(--c-warm); color: var(--c-dark); }
+
+    /* ── Top Bar ── */
+    .topbar { background: var(--c-dark); color: #aaa; font-size: 0.82rem; padding: 8px 0; border-bottom: 1px solid #333; }
+    .topbar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+    .topbar a { color: #aaa; transition: color var(--transition); }
+    .topbar a:hover { color: var(--c-warm); }
+    .topbar-contact { display: flex; gap: 24px; flex-wrap: wrap; }
+    .topbar-badge { background: var(--c-warm); color: var(--c-dark); font-weight: 700; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; letter-spacing: 0.06em; }
+
+    /* ── Nav ── */
+    .nav { position: sticky; top: 0; z-index: 100; background: var(--c-white); border-bottom: 1px solid var(--c-border); box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .nav .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-logo { display: flex; align-items: center; gap: 14px; }
+    .nav-logo img { height: 46px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--c-stone); letter-spacing: 0.03em; position: relative; transition: color var(--transition); }
+    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 2px; background: var(--c-warm); transition: width var(--transition); }
+    .nav-links a:hover, .nav-links a.active { color: var(--c-dark); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--c-dark); margin: 5px 0; }
+
+    /* ── Page Hero ── */
+    .page-hero {
+      background: var(--c-dark);
+      padding: 72px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(200,169,110,0.08) 0%, transparent 60%);
+    }
+    .page-hero-content { position: relative; z-index: 1; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #666; margin-bottom: 20px; }
+    .breadcrumb a { color: var(--c-warm); transition: color var(--transition); }
+    .breadcrumb a:hover { color: var(--c-warm2); }
+    .breadcrumb span { color: #444; }
+    .page-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 400;
+      color: var(--c-white);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.65); max-width: 600px; }
+
+    /* ── Anchor Nav ── */
+    .anchor-nav {
+      background: var(--c-white);
+      border-bottom: 1px solid var(--c-border);
+      position: sticky;
+      top: 72px;
+      z-index: 90;
+    }
+    .anchor-nav .container { display: flex; gap: 0; overflow-x: auto; }
+    .anchor-nav a {
+      flex-shrink: 0;
+      padding: 16px 22px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--c-stone);
+      border-bottom: 2px solid transparent;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .anchor-nav a:hover { color: var(--c-dark); border-bottom-color: var(--c-warm); }
+
+    /* ── Sections ── */
+    .bestattung-section {
+      padding: 88px 0;
+    }
+    .bestattung-section:nth-child(even) { background: var(--c-white); }
+    .bestattung-section:nth-child(odd)  { background: var(--c-cream); }
+
+    .bestattung-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .bestattung-grid.reverse { direction: rtl; }
+    .bestattung-grid.reverse > * { direction: ltr; }
+
+    .bestattung-text h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400;
+      color: var(--c-dark);
+      margin-bottom: 12px;
+    }
+    .bestattung-text p {
+      color: var(--c-stone);
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+    .bestattung-text ul {
+      list-style: none;
+      margin: 20px 0 28px;
+    }
+    .bestattung-text ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--c-border);
+      font-size: 0.9rem;
+      color: var(--c-stone);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .bestattung-text ul li::before { content: '›'; color: var(--c-warm); font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
+
+    /* Image gallery */
+    .img-single img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    .img-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .img-grid-2 img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transition: transform var(--transition);
+    }
+    .img-grid-2 img:hover { transform: scale(1.02); }
+    .img-grid-2.four { grid-template-columns: 1fr 1fr; }
+
+    /* ── Cards für kleinere Bestattungsarten ── */
+    .cards-section { padding: 88px 0; background: var(--c-dark); }
+    .cards-section h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400;
+      color: var(--c-white);
+      margin-bottom: 8px;
+    }
+    .cards-section .section-sub { color: #888; font-size: 0.95rem; margin-bottom: 48px; max-width: 560px; }
+    .cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      padding: 32px 24px;
+      transition: var(--transition);
+    }
+    .card:hover { background: rgba(200,169,110,0.08); border-color: rgba(200,169,110,0.3); transform: translateY(-4px); }
+    .card-icon { font-size: 2rem; margin-bottom: 16px; }
+    .card h3 { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 400; color: var(--c-white); margin-bottom: 10px; }
+    .card p { font-size: 0.85rem; color: #888; line-height: 1.7; }
+    .card a { color: var(--c-warm); font-size: 0.82rem; display: inline-block; margin-top: 12px; }
+    .card a:hover { color: var(--c-warm2); }
+
+    /* ── Foto-Gallery ── */
+    .img-overlay-wrap { position: relative; overflow: hidden; border-radius: 6px; }
+    .img-overlay-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform var(--transition); }
+    .img-overlay-wrap:hover img { transform: scale(1.04); }
+
+    /* ── CTA Banner ── */
+    .cta-banner {
+      background: var(--c-warm);
+      padding: 64px 0;
+      text-align: center;
+    }
+    .cta-banner h2 { font-family: var(--font-serif); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; color: var(--c-dark); margin-bottom: 12px; }
+    .cta-banner p { color: rgba(26,26,26,0.7); margin-bottom: 32px; font-size: 1rem; }
+    .cta-banner .btn--dark { background: var(--c-dark); color: var(--c-white); border-color: var(--c-dark); }
+    .cta-banner .btn--dark:hover { background: #333; }
+
+    /* ── Footer ── */
+    .footer { background: #111; color: #888; padding: 48px 0 0; }
+    .footer-bottom { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: #555; border-top: 1px solid #222; }
+    .footer-bottom a { color: #555; transition: color var(--transition); }
+    .footer-bottom a:hover { color: #888; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; padding-bottom: 40px; }
+    .footer-brand p { font-size: 0.87rem; margin: 16px 0 20px; line-height: 1.8; }
+    .footer-brand img { height: 44px; filter: brightness(0) invert(1); opacity: 0.6; }
+    .footer-phone { font-size: 1.2rem; font-weight: 700; color: var(--c-warm); }
+    .footer-col h4 { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-warm); font-weight: 600; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a { font-size: 0.87rem; color: #888; transition: color var(--transition); }
+    .footer-col ul li a:hover { color: var(--c-white); }
+
+    /* ── Notfall ── */
+    .notfall-banner { position: fixed; bottom: 32px; right: 32px; z-index: 200; background: var(--c-dark); border: 2px solid var(--c-warm); border-radius: 8px; padding: 16px 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); display: flex; align-items: center; gap: 14px; animation: slideIn 0.5s ease 1.5s both; }
+    @keyframes slideIn { from { transform: translateY(120%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .notfall-dot { width: 10px; height: 10px; background: #4caf50; border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0; }
+    @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(76,175,80,0.4)} 50%{box-shadow:0 0 0 8px rgba(76,175,80,0)} }
+    .notfall-text strong { display: block; color: var(--c-white); font-size: 0.85rem; }
+    .notfall-text a { color: var(--c-warm); font-size: 1rem; font-weight: 700; }
+    .notfall-close { background: none; border: none; color: #555; cursor: pointer; font-size: 1.2rem; line-height: 1; padding: 0 0 0 8px; transition: color var(--transition); }
+    .notfall-close:hover { color: var(--c-white); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .bestattung-grid, .bestattung-grid.reverse { grid-template-columns: 1fr; direction: ltr; gap: 36px; }
+      .cards-grid { grid-template-columns: 1fr 1fr; }
+      .img-grid-2 { grid-template-columns: 1fr; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: block; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .notfall-banner { bottom: 16px; right: 16px; left: 16px; }
+    }
+    @media (max-width: 480px) {
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ── -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-contact">
+      <span>📍 Lindenstraße 40, 36341 Lauterbach</span>
+      <span>📞 <a href="tel:06641919356">06641 919356</a></span>
+      <span>✉ <a href="mailto:info@bestattungen-ruhl.de">info@bestattungen-ruhl.de</a></span>
+    </div>
+    <span class="topbar-badge">24 Std. erreichbar</span>
+  </div>
+</div>
+
+<!-- ── Nav ── -->
+<nav class="nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="Logofreigestellt.png" alt="Ruhl Bestattungen Logo" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#leistungen">Leistungen</a></li>
+      <li><a href="bestattungen.html" class="active">Bestattungsarten</a></li>
+      <li><a href="index.html#trauerfall">Im Trauerfall</a></li>
+      <li><a href="index.html#vorsorge">Vorsorge</a></li>
+      <li><a href="index.html#team">Team</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="tel:06641919356" class="btn btn--gold" style="font-size:0.85rem; padding:10px 20px;">Jetzt anrufen</a>
+    <button class="hamburger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── Page Hero ── -->
+<div class="page-hero">
+  <div class="container page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Startseite</a>
+      <span>›</span>
+      <span>Bestattungsarten</span>
+    </div>
+    <span class="label">Bestattungsarten</span>
+    <h1>Bestattung im Sinne<br>des Verstorbenen</h1>
+    <p>Jeder Mensch ist einzigartig – und so sollte auch der letzte Abschied sein. Wir begleiten Sie bei der Wahl der passenden Bestattungsform.</p>
+  </div>
+</div>
+
+<!-- ── Anchor Nav ── -->
+<div class="anchor-nav">
+  <div class="container">
+    <a href="#erdbestattung">Erdbestattung</a>
+    <a href="#feuerbestattung">Feuerbestattung</a>
+    <a href="#weitere">Weitere Arten</a>
+    <a href="#kontakt-cta">Kontakt</a>
+  </div>
+</div>
+
+<!-- ── Erdbestattung ── -->
+<section class="bestattung-section" id="erdbestattung">
+  <div class="container">
+    <div class="bestattung-grid">
+      <div class="bestattung-text">
+        <span class="label">Traditionell</span>
+        <div class="divider"></div>
+        <h2>Erdbestattung</h2>
+        <p>Die am meisten verbreitete Bestattung in unserer Region ist die traditionelle Erdbestattung in einem Sarg. Sie bietet Angehörigen einen festen Ort der Trauer und des Gedenkens.</p>
+        <p>Gesetzlich ist für die Erdbestattung eine Sargpflicht vorgeschrieben. Die Nutzungsrechte am Grab sind zeitlich begrenzt, können jedoch verlängert werden.</p>
+        <ul>
+          <li>Einzelgrab oder Doppelgrab möglich</li>
+          <li>Wahlgrab (selbst gewählt) oder Reihengrab</li>
+          <li>Sargpflicht gesetzlich vorgeschrieben</li>
+          <li>Nutzungsrechte zeitlich begrenzt und verlängerbar</li>
+          <li>Fester Ort der Trauer und des Gedenkens</li>
+        </ul>
+        <a href="index.html#kontakt" class="btn btn--gold">Beratung anfragen</a>
+      </div>
+      <div>
+        <div class="img-grid-2">
+          <div class="img-overlay-wrap" style="height:240px;">
+            <img src="https://www.bestattungen-ruhl.de/uploads/9rKp3QHR/767x0_2560x0/ErdbestattungeinzelgrabKopie.jpg"
+                 alt="Erdbestattung Einzelgrab" />
+          </div>
+          <div class="img-overlay-wrap" style="height:240px;">
+            <img src="https://www.bestattungen-ruhl.de/uploads/axqtF9gc/767x0_2560x0/ErdbestattungdoppelKopie.jpg"
+                 alt="Erdbestattung Doppelgrab" />
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; margin-top:12px; font-size:0.8rem; color:var(--c-stone); justify-content:space-between; padding:0 4px;">
+          <span>Einzelgrab</span>
+          <span>Doppelgrab</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Feuerbestattung ── -->
+<section class="bestattung-section" id="feuerbestattung">
+  <div class="container">
+    <div class="bestattung-grid reverse">
+      <div class="bestattung-text">
+        <span class="label">Kremation</span>
+        <div class="divider"></div>
+        <h2>Feuerbestattung</h2>
+        <p>Die Feuerbestattung ist die Kremation (Verbrennung) des Verstorbenen im Sarg. Sie ermöglicht flexible Formen der Beisetzung und wird in unserer Region immer häufiger gewählt.</p>
+        <p>Eine schriftliche Willenserklärung des Verstorbenen oder die Zustimmung der Angehörigen ist erforderlich. Die Trauerfeier kann sowohl vor als auch nach der Einäscherung stattfinden.</p>
+        <ul>
+          <li>Schriftliche Willenserklärung erforderlich</li>
+          <li>Trauerfeier vor oder nach der Einäscherung möglich</li>
+          <li>Urnenbeisetzung zu einem späteren Zeitpunkt</li>
+          <li>Urnengrab, Urnenwand oder Urnenstele</li>
+          <li>Flexible Gestaltung der Abschiednahme</li>
+        </ul>
+        <a href="index.html#kontakt" class="btn btn--outline-gold">Beratung anfragen</a>
+      </div>
+      <div>
+        <div class="img-grid-2 four">
+          <div class="img-overlay-wrap" style="height:200px;">
+            <img src="https://www.bestattungen-ruhl.de/uploads/LirLErKa/767x0_2560x0/UrnendoppelgrabKopie.jpg"
+                 alt="Urnendoppelgrab" />
+          </div>
+          <div class="img-overlay-wrap" style="height:200px;">
+            <img src="https://www.bestattungen-ruhl.de/uploads/PmTBw2yv/767x0_2560x0/UrnenwandKopie.jpg"
+                 alt="Urnenwand" />
+          </div>
+          <div class="img-overlay-wrap" style="height:200px;">
+            <img src="https://www.bestattungen-ruhl.de/uploads/lQ7MGOWJ/767x0_2560x0/UrnenstehleKopie.jpg"
+                 alt="Urnenstele" />
+          </div>
+          <div class="img-overlay-wrap" style="height:200px;">
+            <img src="https://www.bestattungen-ruhl.de/uploads/FnGyYOv8/767x0_2560x0/Urnenstehlen1Kopie.jpg"
+                 alt="Urnenstele Variante" />
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px; font-size:0.8rem; color:var(--c-stone); padding:0 4px;">
+          <span>Urnendoppelgrab</span>
+          <span>Urnenwand</span>
+          <span>Urnenstele</span>
+          <span>Urnenstele</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Weitere Bestattungsarten ── -->
+<section class="cards-section" id="weitere">
+  <div class="container">
+    <span class="label">Weitere Möglichkeiten</span>
+    <div style="width:56px;height:2px;background:var(--c-warm);margin:16px 0 24px;"></div>
+    <h2>Weitere Bestattungsarten</h2>
+    <p class="section-sub">Neben den klassischen Formen bieten wir Ihnen eine Vielzahl individueller Bestattungsmöglichkeiten – ganz nach den Wünschen und Überzeugungen des Verstorbenen.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">🕯️</div>
+        <h3>Anonyme Bestattung</h3>
+        <p>Meist als Feuerbestattung auf einem Gemeinschaftsfeld ohne Grabkennzeichnung. Zeitpunkt und Ort der Beisetzung werden vom Friedhofsamt bestimmt.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌊</div>
+        <h3>Seebestattung</h3>
+        <p>Die Urne wird außerhalb der Drei-Meilen-Zone in der Nord- oder Ostsee beigesetzt. Angehörige erhalten eine Seekarte mit den genauen Koordinaten.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌳</div>
+        <h3>Friedwaldbestattung</h3>
+        <p>Die Asche des Verstorbenen wird direkt zu den Wurzeln eines Baumes im Wald gegeben. Die Natur übernimmt die Grabpflege.</p>
+        <a href="https://www.friedwald.de" target="_blank" rel="noopener">→ friedwald.de</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏔️</div>
+        <h3>Naturbestattung</h3>
+        <p>Die letzte Ruhe inmitten der hohen Tauern und der Kitzbüheler Alpen – in einer biologisch abbaubaren Urne, im Einklang mit der Natur.</p>
+        <a href="https://www.naturbestattung.cc" target="_blank" rel="noopener">→ naturbestattung.cc</a>
+      </div>
+    </div>
+
+    <!-- Weitere Bilder -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:48px;">
+      <div class="img-overlay-wrap" style="height:320px; border-radius:8px;">
+        <img src="https://www.bestattungen-ruhl.de/uploads/EKvVGNx3/767x0_2560x0/Memoriamgarten1Kopie.jpg"
+             alt="Memoriam Garten" style="border-radius:8px;" />
+      </div>
+      <div class="img-overlay-wrap" style="height:320px; border-radius:8px;">
+        <img src="https://www.bestattungen-ruhl.de/uploads/FR1eHzlG/767x0_2560x0/SternenkinderKopie.jpg"
+             alt="Sternenkinder" style="border-radius:8px;" />
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:12px; font-size:0.82rem; color:#666; padding:0 4px;">
+      <span>Memoriam Garten</span>
+      <span>Sternenkinder</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-banner" id="kontakt-cta">
+  <div class="container">
+    <span class="label" style="color:rgba(26,26,26,0.5);">Wir helfen Ihnen</span>
+    <h2>Fragen zur Bestattungsform?<br>Wir beraten Sie einfühlsam.</h2>
+    <p>Sprechen Sie uns an – unverbindlich, persönlich und 24 Stunden am Tag erreichbar.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="tel:06641919356" class="btn btn--dark">📞 06641 919356</a>
+      <a href="index.html#kontakt" class="btn btn--outline-gold" style="border-color:var(--c-dark); color:var(--c-dark);">Kontaktformular</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="Logofreigestellt.png" alt="Ruhl Bestattungen Logo" />
+        <p>Ruhl Bestattungen – Ihr vertrauensvoller Partner in Lauterbach (Hessen). Mit Würde, Einfühlsamkeit und Kompetenz an Ihrer Seite.</p>
+        <div class="footer-phone">📞 <a href="tel:06641919356" style="color:var(--c-warm);">06641 919356</a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Bestattungsarten</h4>
+        <ul>
+          <li><a href="#erdbestattung">Erdbestattung</a></li>
+          <li><a href="#feuerbestattung">Feuerbestattung</a></li>
+          <li><a href="#weitere">Anonyme Bestattung</a></li>
+          <li><a href="#weitere">Seebestattung</a></li>
+          <li><a href="#weitere">Friedwaldbestattung</a></li>
+          <li><a href="#weitere">Naturbestattung</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Ruhl Bestattungen · Lindenstraße 40, 36341 Lauterbach</span>
+      <div class="footer-links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Notfall Banner ── -->
+<div class="notfall-banner" id="notfallBanner">
+  <div class="notfall-dot"></div>
+  <div class="notfall-text">
+    <strong>24 Std. Notfallnummer</strong>
+    <a href="tel:06641919356">06641 919356</a>
+  </div>
+  <button class="notfall-close" onclick="document.getElementById('notfallBanner').style.display='none'" aria-label="Schließen">×</button>
+</div>
+
+</body>
+</html>
