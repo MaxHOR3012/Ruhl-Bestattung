@@ -771,30 +771,159 @@
     }
     .notfall-close:hover { color: var(--c-white); }
 
-    /* ── Responsive ───────────────────────────────────── */
+    /* ── Mobile Menu ──────────────────────────────────── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: var(--c-dark);
+      flex-direction: column;
+      padding: 24px;
+      overflow-y: auto;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .mobile-menu-header img { height: 44px; width: auto; }
+    .mobile-menu-close {
+      background: none; border: none;
+      color: var(--c-white); font-size: 2rem;
+      cursor: pointer; line-height: 1;
+    }
+    .mobile-menu nav { display: flex; flex-direction: column; gap: 4px; }
+    .mobile-menu nav a {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--c-white);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: color var(--transition);
+    }
+    .mobile-menu nav a:hover { color: var(--c-warm); }
+    .mobile-menu-footer {
+      margin-top: auto;
+      padding-top: 40px;
+    }
+    .mobile-menu-footer a.btn {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      font-size: 1rem;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .mobile-menu-contact {
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
+      line-height: 2;
+    }
+    .mobile-menu-contact a { color: #888; }
+
+    /* ── Responsive 1024px ────────────────────────────── */
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .vorsorge-grid { grid-template-columns: repeat(2, 1fr); }
       .quick-icons .container { grid-template-columns: repeat(2, 1fr); }
       .qi-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.12); }
+      .team-grid { grid-template-columns: repeat(3, 1fr); }
     }
+
+    /* ── Responsive 768px ─────────────────────────────── */
     @media (max-width: 768px) {
-      .section { padding: 60px 0; }
-      .about-grid,
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .team-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
-      .process-steps { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
-      .vorsorge-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      /* Topbar */
+      .topbar-contact span:first-child { display: none; }
+      .topbar .container { justify-content: center; gap: 12px; }
+
+      /* Nav */
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: block; }
+      .nav .container { height: 60px; }
+      .nav-logo img { height: 38px; }
+
+      /* Sections */
+      .section { padding: 52px 0; }
+      .container { padding: 0 16px; }
+
+      /* Hero */
+      .hero { min-height: 100svh; }
+      .hero-content { padding: 80px 0 60px; }
+      .hero h1 { font-size: 1.9rem; margin-bottom: 20px; }
+      .hero-quote { font-size: 1rem; margin-bottom: 32px; }
       .hero-badge { display: none; }
+      .hero-actions { flex-direction: column; gap: 12px; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+
+      /* Quick Icons */
+      .quick-icons .container { grid-template-columns: 1fr 1fr; }
+      .qi-item { padding: 18px 14px; gap: 10px; }
+      .qi-icon { width: 36px; height: 36px; }
+      .qi-text strong { font-size: 0.82rem; }
+      .qi-text span { display: none; }
+
+      /* About */
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-img { max-width: 100%; }
       .about-img::before { display: none; }
-      .hero { min-height: 75vh; }
-      .hero h1 { font-size: 2rem; }
+      .about-values { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .about-val { padding: 12px; }
+
+      /* Services */
+      .services-grid { grid-template-columns: 1fr; gap: 16px; }
+      .service-card { padding: 24px 20px; }
+
+      /* Trauerfall */
+      .process-steps { grid-template-columns: 1fr; gap: 16px; }
+      .step { padding: 28px 20px; }
+
+      /* Vorsorge */
+      .vorsorge-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .vorsorge-card { padding: 22px 16px; }
+
+      /* Team */
+      .team-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
+
+      /* Memberships */
+      .memberships { padding: 32px 0; }
+      .memberships .container { gap: 10px; }
+      .membership-item { font-size: 0.78rem; padding: 8px 14px; }
+      .memberships-label { width: 100%; text-align: center; margin: 0 0 4px; }
+
+      /* Contact */
+      .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+      .contact-form-wrap { padding: 28px 20px; }
       .form-row { grid-template-columns: 1fr; }
-      .notfall-banner { bottom: 16px; right: 16px; left: 16px; }
+
+      /* Map */
+      .map-wrap { height: 280px; }
+
+      /* Footer */
+      .footer { padding: 40px 0 0; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; padding-bottom: 32px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .footer-links { gap: 16px; }
+
+      /* Notfall */
+      .notfall-banner { bottom: 0; right: 0; left: 0; border-radius: 0; border-left: none; border-right: none; border-bottom: none; }
+
+      /* Section title */
+      h2.section-title { font-size: 1.7rem; }
+      .section-lead { font-size: 0.95rem; margin-bottom: 32px; }
+      .divider { margin: 12px 0 24px; }
+    }
+
+    /* ── Responsive 480px ─────────────────────────────── */
+    @media (max-width: 480px) {
+      .vorsorge-grid { grid-template-columns: 1fr; }
+      .about-values { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.65rem; }
+      .topbar { display: none; }
     }
   </style>
 </head>
@@ -832,6 +961,30 @@
     </button>
   </div>
 </nav>
+
+<!-- ── Mobile Menu ───────────────────────────────────── -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <img src="Logofreigestellt.png" alt="Ruhl Bestattungen Logo" />
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Menü schließen">×</button>
+  </div>
+  <nav>
+    <a href="#leistungen" onclick="closeMobileMenu()">Leistungen</a>
+    <a href="bestattungen.html" onclick="closeMobileMenu()">Bestattungsarten</a>
+    <a href="#trauerfall" onclick="closeMobileMenu()">Im Trauerfall</a>
+    <a href="#vorsorge" onclick="closeMobileMenu()">Vorsorge</a>
+    <a href="#team" onclick="closeMobileMenu()">Team</a>
+    <a href="#kontakt" onclick="closeMobileMenu()">Kontakt</a>
+  </nav>
+  <div class="mobile-menu-footer">
+    <a href="tel:06641919356" class="btn btn--gold">📞 06641 919356</a>
+    <div class="mobile-menu-contact">
+      <a href="mailto:info@bestattungen-ruhl.de">info@bestattungen-ruhl.de</a><br>
+      Lindenstraße 40 · 36341 Lauterbach<br>
+      <strong style="color:var(--c-warm);">24 Stunden erreichbar</strong>
+    </div>
+  </div>
+</div>
 
 <!-- ── Hero ──────────────────────────────────────────── -->
 <section class="hero">
@@ -1291,20 +1444,32 @@
 </div>
 
 <script>
+  // Mobile menu
+  const mobileMenu = document.getElementById('mobileMenu');
+  document.querySelector('.hamburger').addEventListener('click', () => {
+    mobileMenu.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  document.getElementById('mobileMenuClose').addEventListener('click', () => closeMobileMenu());
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  // Close on backdrop click
+  mobileMenu.addEventListener('click', e => { if (e.target === mobileMenu) closeMobileMenu(); });
+
   // Smooth active nav
   const sections = document.querySelectorAll('section[id], div[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
     let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 100) current = s.id;
-    });
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
     navLinks.forEach(a => {
       a.style.color = a.getAttribute('href') === '#' + current ? 'var(--c-dark)' : '';
     });
   });
 
-  // Simple form handler
+  // Form handler
   const form = document.querySelector('form');
   if (form) {
     form.addEventListener('submit', e => {
